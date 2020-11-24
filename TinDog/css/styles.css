@@ -1,0 +1,192 @@
+body{
+  text-align: center;
+}
+
+.container-fluid {
+  padding: 7% 15%
+}
+
+.colored-section{
+  background-color: #ff4c68;
+  color: white;
+}
+
+.white-section{
+  background-color:#fff;
+}
+
+/* Heading Section */
+
+.big-heading{
+  font-size: 3.5rem;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.section-header{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+
+/* Navigation */
+
+.navbar {
+  padding: 0 0 4rem;
+}
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+.iphone {
+  transform: rotate(20deg);
+}
+.nav-item {
+  padding: 0 18px;
+}
+.nav-link {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+
+/* Title Section */
+
+#title .container-fluid{
+  padding: 3% 15%;
+  text-align: left;
+}
+
+.title-image {
+  width: 60%;
+  position: absolute;
+}
+
+
+
+/* Features Section */
+
+#features {
+  padding: 7% 15%;
+  z-index: 1;
+  position: relative;
+  background-color: white;
+}
+.feature-box {
+  padding: 5%;
+}
+.feature-icons {
+  color: #ef8172;
+  padding-bottom: 1rem;
+}
+.feature-icons:hover {
+  color: #ff4c68;
+}
+
+.feature-title{
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+p {
+  font-family: "Montserrat-light", sans-serif;
+  color: #8f8f8f;
+}
+
+
+
+
+
+/* Testimonal Section */
+
+
+.testimonial-text{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+#testimonials {
+  background-color: #ef8172;
+}
+
+.testimonial-image {
+  width: 10%;
+  border-radius: 100%;
+}
+
+
+
+
+/* Press Section */
+
+#press {
+  background-color: #ef8172;
+  padding-bottom: 10%;
+}
+.press-logo {
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+
+
+
+/* Pricing Section */
+
+
+.price-text{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+#pricing {
+  padding: 100px;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+.pricing-title{
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+
+
+/* cta section */
+
+
+
+/* footer Section */
+
+#footer{
+  background-color: #fff;
+}
+.footer-icons{
+  margin-bottom: 2%;
+}
+.footer-icons .fab, .footer-icons .fas{
+  padding: 0.75%;
+}
+
+
+@media (max-width: 900px) {
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+  #title{
+    text-align: center;
+  }
+}

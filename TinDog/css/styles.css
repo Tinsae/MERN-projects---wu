@@ -3,7 +3,7 @@ body{
 }
 
 .container-fluid {
-  padding: 7% 15%
+  padding: 7% 15%;
 }
 
 .colored-section{
@@ -20,8 +20,7 @@ body{
 .big-heading{
   font-size: 3.5rem;
   line-height: 1.5;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
+  font-weight: bold;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -34,7 +33,6 @@ h1, h2, h3, h4, h5, h6{
   line-height: 1.5;
 }
 
-
 /* Navigation */
 
 .navbar {
@@ -42,7 +40,6 @@ h1, h2, h3, h4, h5, h6{
 }
 .navbar-brand {
   font-family: "Ubuntu", sans-serif;
-  font-weight: bold;
   font-size: 2.5rem;
 }
 .iphone {
@@ -79,7 +76,7 @@ h1, h2, h3, h4, h5, h6{
 
 #features {
   padding: 7% 15%;
-  z-index: 1;
+  /*z-index: 1;*/
   position: relative;
   background-color: white;
 }
@@ -97,10 +94,11 @@ h1, h2, h3, h4, h5, h6{
 .feature-title{
   font-size: 1.5rem;
   line-height: 1.5;
+  font-weight: 900;
 }
 
 p {
-  font-family: "Montserrat-light", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #8f8f8f;
 }
 
@@ -181,7 +179,7 @@ p {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 987px) {
   .title-image {
     position: static;
     transform: rotate(0);

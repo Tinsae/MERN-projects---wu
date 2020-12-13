@@ -1,38 +1,44 @@
 
-let drumContainer = document.querySelector(".set");
-drumContainer.addEventListener("click", handleClick);
+let buttons = document.querySelectorAll(".drum");
+for(let btn of buttons){
+    btn.addEventListener("click", handleEvent);
+    btn.addEventListener("keydown", handleEvent);
+}
+function handleEvent(event){
+    if(event.target.tagName == 'BUTTON'){
+        if(event.type == 'click'){
+            makeSound(event.target.textContent);
+            animateButton(event.target.textContent);
+        }
+        else if(event.type == 'keydown'){
+            makeSound(event.key);
+            animateButton(event.key);
+        }
 
-function handleClick(event){
-    const node = event.target;
-    const isButton = node.nodeName === "BUTTON";
-    if(!isButton){
-        return ;
     }
-    node.style.color = "white";
-    const text = node.textContent;
-    let soundURL = "";
-   
-    if(text == 'w'){
-        soundURL = "sounds/tom-1.mp3";
-    }
-    else if(text == 'a'){
-        soundURL = "sounds/tom-2.mp3";
-    }
-    else if(text == 's'){
-        soundURL = "sounds/tom-3.mp3";
-    }
-    else if(text == 'd'){
-        soundURL = "sounds/tom-4.mp3";
-    }
-    else if(text == 'j'){
-        soundURL = "sounds/snare.mp3";
-    }
-    else if(text == 'k'){
-        soundURL = "sounds/crash.mp3";
-    }
-    else{
-        soundURL = "sounds/kick-bass.mp3";
-    }
-    var sound = new Audio(soundURL)
-    sound.play();
 } 
+
+function animateButton(key){
+    console.log(key);
+    let target = document.querySelector("." + key);
+    if(target){
+        target.classList.add("pressed");
+        setTimeout(()=>{
+            target.classList.remove("pressed");
+        }, 200);
+    }
+}
+function makeSound(key){
+    if(key && "wasdjkl".includes(key)){
+        let aMap = new Map()
+        aMap['w'] = 'tom-1.mp3';
+        aMap['a'] = 'tom-2.mp3';
+        aMap['s'] = 'tom-3.mp3';
+        aMap['d'] = 'tom-4.mp3';
+        aMap['j'] = 'snare.mp3';
+        aMap['k'] = 'crash.mp3';
+        aMap['l'] = 'kick-bass.mp3';
+        let url = "sounds/" + aMap[key];
+        new Audio(url).play();
+    }
+}

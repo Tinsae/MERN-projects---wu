@@ -38,8 +38,18 @@ function nextSequence(){
     let randomNumber = Math.floor((Math.random() * 3))
     let randomChosenColour = buttonColors[randomNumber];
     gamePattern.push(randomChosenColour);
-    $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-    playSound(randomChosenColour);
+    // play all patterns
+    let colorIndex = 0;
+    let myInterval = setInterval(() => {
+        if(colorIndex >= gamePattern.length){
+            clearInterval(myInterval);
+        }
+        else{
+            $("#" + gamePattern[colorIndex]).fadeIn(100).fadeOut(100).fadeIn(100);
+            playSound(gamePattern[colorIndex]);
+            colorIndex += 1;
+        }
+    }, 500);
 }
 function startOver(){
     level = 0;
@@ -57,6 +67,7 @@ $(".btn").click((event)=>{
 
 
 $(document).on('keypress',function(event) {
+    startOver();
     $("h1").text("Level " + level);
     nextSequence();
 });

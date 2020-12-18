@@ -1,14 +1,10 @@
 
+// apikey: ab9941c3b838d576684a4988144778e9-us7
+// listId: d6f0c2f209
 const bodyParser = require("body-parser");
 const express = require("express");
 const request = require("request");
 const https = require("https");
-const fs = require("fs");
-
-const rawdata = fs.readFileSync("../keys/mailchimp.json");
-const apiKey = JSON.parse(rawdata).apikey;
-const listId = JSON.parse(rawdata).listId;
-const server = JSON.parse(rawdata).server;
 
 const app = express();
 // used to expose static files
@@ -40,10 +36,10 @@ app.post("/", (req0, res0) => {
     };
 
     const jsonData = JSON.stringify(data);
-    const url =  `https://${server}.api.mailchimp.com/3.0/lists/${listId}`;
+    const url =  "https://us7.api.mailchimp.com/3.0/lists/d6f0c2f209";
     const options = {
         "method": "POST",
-        "auth": `anynamehere:${apiKey}-${us7}`,
+        "auth": "anynamehere:ab9941c3b838d576684a4988144778e9-us7",
     };
     const req1 = https.request(url, options, (res1) => {
         if(res1.statusCode == 200){

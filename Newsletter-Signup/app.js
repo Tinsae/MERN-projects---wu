@@ -43,7 +43,7 @@ app.post("/", (req0, res0) => {
     const url =  `https://${server}.api.mailchimp.com/3.0/lists/${listId}`;
     const options = {
         "method": "POST",
-        "auth": `anynamehere:${apiKey}-${us7}`,
+        "auth": `anynamehere:${apiKey}-${server}`,
     };
     const req1 = https.request(url, options, (res1) => {
         if(res1.statusCode == 200){

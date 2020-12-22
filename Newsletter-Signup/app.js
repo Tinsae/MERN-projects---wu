@@ -1,4 +1,3 @@
-
 const bodyParser = require("body-parser");
 const express = require("express");
 const request = require("request");
@@ -63,7 +62,7 @@ app.post("/", (req0, res0) => {
 app.post("/failure", (req, res) => {
     res.redirect("/");
 });
-
-app.listen(3000, () => {
+// process.env.PORT is used for Heroku dynamic port
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server is running on port 3000");
 });

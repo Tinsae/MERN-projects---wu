@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-</head>
-<body>
-    <%if (kindOfDay == "Saturday" || kindOfDay == "Sunday") { %>
-        <h1 style="color:purple"><%=kindOfDay%> ToDo List</h1>
-    <%} else { %>
-        <h1 style="color:blue"><%=kindOfDay%> ToDo List</h1>
-    <% } %>
-</body>
-</html>
+<%- include("header") -%>
+    <div class="box" id="heading">
+        <h1><%= listTitle %></h1>
+    </div>
+    <div class="box">
+        <u1>
+            <% for (item of items){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= item %></p>
+            </div>
+            <% } %> 
+        </u1>
+        <form class="item" method="POST" action="/">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <!-- value is used to differentiate the list -->
+            <button type="submit" name="list" value=<%= listTitle %>>+</button>
+        </form>
+    </div>
+<%- include("footer") -%>

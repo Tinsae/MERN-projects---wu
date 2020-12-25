@@ -1,0 +1,10 @@
+<%- include("header.ejs") -%>
+<h1>Home</h1>
+<p><%= startingContent %></p>
+<% for(post of posts){ %>
+    <h1><%= post.postTitle %></h1>
+    <p><%= post.postBody.substring(0, 100) + " ... "%></p>
+    <a href= <%= "posts/" + post.postTitle.replace(/\s+/g, "-")%>>Read More</a>
+    <% console.log( post.postTitle);%>
+    <br/>
+<% } %><%- include("footer.ejs") -%>

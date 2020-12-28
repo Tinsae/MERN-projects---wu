@@ -1,16 +1,22 @@
 const { MongoClient } = require("mongodb");
 
-// Connection URI
-const uri =
-    "mongodb://localhost:27017/?poolSize=20&w=majority";
 
+const uri = "mongodb://localhost:27017/?poolSize=20&w=majority"; 
 // Create a new MongoClient
 const client = new MongoClient(uri, { useUnifiedTopology: true });
 
+async function connect(){
+    try {
+        // Connect to the MongoDB cluster
+        await client.connect();
+ 
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 async function insert() {
     try {
-        // Connect the client to the server
-        await client.connect();
         const database = client.db("fruitsDB");
         const collection = database.collection("fruits");
         const fruits = [
@@ -43,11 +49,8 @@ async function insert() {
 
 async function select() {
     try {
-        // Connect the client to the server
-        await client.connect();
         const database = client.db("fruitsDB");
         const collection = database.collection("fruits");
-
         const query = {};
         const options = {
             sort: { name: 1 },
@@ -64,9 +67,5 @@ async function select() {
         await client.close();
     }
 }
-
-
-
-
 // insert().catch(console.dir);
-select().catch(console.dir);
+connect().then(select().catch(console.dir));
